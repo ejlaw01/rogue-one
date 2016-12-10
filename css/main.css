@@ -5,12 +5,13 @@ html {
   box-sizing: inherit; }
 
 .header {
+  position: relative;
   margin: 0;
   height: 3em;
   width: 100%;
   text-align: center;
-  color: white;
-  background: black; }
+  color: #dfdfdf;
+  background: #343434; }
   @media screen and (min-width: 1000px) {
     .header {
       height: 8em; } }
@@ -19,6 +20,57 @@ html {
     margin: 0 auto; }
   .header h4 {
     margin: 0 auto; }
+
+.content {
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  padding: 1em 0;
+  color: #dfdfdf;
+  background-color: #202020; }
+  .content .faction {
+    position: relative;
+    min-height: 275px;
+    width: auto;
+    margin: 1em;
+    padding: 1em; }
+    .content .faction:hover > .gallery {
+      display: block; }
+    .content .faction#rebels {
+      background-color: #1d1d36; }
+    .content .faction#imperial {
+      background-color: #361d1d; }
+
+.gallery {
+  width: 100%; }
+  .gallery h2 {
+    margin: 0;
+    margin-bottom: 1em;
+    padding: .5em;
+    border-top: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf; }
+  .gallery img {
+    width: 90%;
+    border-radius: 5px;
+    border: 2px solid #dfdfdf; }
+  .gallery .gallery-item {
+    position: relative;
+    margin: 1em auto;
+    padding: .5em;
+    background-color: #343434;
+    border-radius: 5px;
+    border: 5px solid #3a3a3a; }
+    .gallery .gallery-item img {
+      margin: 1em 5% 1em 5%; }
+
+.footer {
+  position: relative;
+  height: 8em;
+  width: 100%;
+  background: url("../img/vader-footer.jpg") center right no-repeat;
+  background-size: cover; }
 
 body {
   margin: 0; }

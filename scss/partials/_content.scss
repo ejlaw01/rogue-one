@@ -1,0 +1,51 @@
+.content {
+  @include position(relative, 0 0 null 0);
+  width: 100%;
+  padding: 1em 0;
+  color: $text-color;
+  background-color: $background-color;
+  .faction {
+    position: relative;
+    min-height: 275px;
+    width: auto;
+    margin: 1em;
+    padding: 1em;
+    &:hover > .gallery {
+      display: block;
+    }
+    &#rebels {
+      background-color: mix($background-color,blue,90%);
+    }
+    &#imperial {
+      background-color: mix($background-color,red,90%);
+    }
+  }
+}
+
+.gallery {
+  // display: none;
+  width: 100%;
+  h2 {
+    margin: 0;
+    margin-bottom: 1em;
+    padding: .5em;
+    border-top: 1px solid $text-color;
+    border-bottom: 1px solid $text-color;
+  }
+  img {
+    width: 90%;
+    border-radius: 5px;
+    border: 2px solid $text-color;
+  }
+  .gallery-item {
+    position: relative;
+    margin: 1em auto;
+    padding: .5em;
+    background-color: $header-color;
+    border-radius: 5px;
+    border: 5px solid lighten($background-color, 10%);
+    img {
+      margin: 1em 5% 1em 5%;
+    }
+  }
+}
