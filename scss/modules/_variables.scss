@@ -1,3 +1,5 @@
 $background-color: #202020;
 $header-color: lighten($background-color, 8%);
 $text-color: invert($background-color);
+$rebel-red: mix($background-color,red,90%);
+$empire-grey: darken($background-color, 20%);

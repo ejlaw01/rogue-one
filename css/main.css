@@ -7,18 +7,28 @@ html {
 .header {
   position: relative;
   margin: 0;
-  height: 3em;
+  height: 3.5em;
   width: 100%;
   text-align: center;
-  color: #dfdfdf;
-  background: #343434; }
-  @media screen and (min-width: 1000px) {
-    .header {
-      height: 8em; } }
+  color: white;
+  background: #202020; }
+  .header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: radial-gradient(black, #202020);
+    opacity: .5; }
   .header h1 {
+    position: relative;
+    z-index: 1;
     font-size: 1.5em;
     margin: 0 auto; }
   .header h4 {
+    position: relative;
+    z-index: 1;
     margin: 0 auto; }
 
 .content {
@@ -29,7 +39,8 @@ html {
   width: 100%;
   padding: 1em 0;
   color: #dfdfdf;
-  background-color: #202020; }
+  background: #0e0e0e center top no-repeat;
+  background-size: cover; }
   .content .faction {
     position: relative;
     min-height: 275px;
@@ -37,33 +48,104 @@ html {
     margin: 1em;
     padding: 1em; }
     .content .faction:hover > .gallery {
-      display: block; }
+      display: block;
+      background-image: none !important; }
     .content .faction#rebels {
-      background-color: #1d1d36; }
+      background-color: #1d1d36;
+      background-image: url("../img/rebel-background.jpg");
+      background-image: url("../img/rebel-background.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover; }
+      .content .faction#rebels:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(to bottom right, #202020, black);
+        opacity: .6; }
+      .content .faction#rebels:hover {
+        background-image: none; }
     .content .faction#imperial {
-      background-color: #361d1d; }
+      background-color: black;
+      background-image: url("../img/imperial-background.jpg");
+      background-image: url("../img/imperial-background.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover; }
+      .content .faction#imperial:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(to bottom right, black, black);
+        opacity: .6; }
 
 .gallery {
-  width: 100%; }
+  display: none;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto; }
+  .gallery::after {
+    clear: both;
+    content: "";
+    display: block; }
   .gallery h2 {
+    position: relative;
     margin: 0;
     margin-bottom: 1em;
     padding: .5em;
     border-top: 1px solid #dfdfdf;
-    border-bottom: 1px solid #dfdfdf; }
-  .gallery img {
-    width: 90%;
-    border-radius: 5px;
-    border: 2px solid #dfdfdf; }
+    border-bottom: 1px solid #dfdfdf;
+    z-index: 1; }
   .gallery .gallery-item {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
-    margin: 1em auto;
-    padding: .5em;
-    background-color: #343434;
+    margin: 2em .5em;
+    background-color: #1b1b1b;
     border-radius: 5px;
-    border: 5px solid #3a3a3a; }
+    border: 2px solid #202020;
+    border-radius: 5px; }
+    .gallery .gallery-item::after {
+      clear: both;
+      content: "";
+      display: block; }
     .gallery .gallery-item img {
-      margin: 1em 5% 1em 5%; }
+      width: 100%;
+      border-radius: 5px 5px 0 0; }
+    .gallery .gallery-item .item-text {
+      position: relative;
+      bottom: 0; }
+    .gallery .gallery-item h3 {
+      margin: .5em 2em auto 1em;
+      padding: .5em;
+      border-top: 2px solid #361d1d;
+      border-bottom: 2px solid #361d1d; }
+    .gallery .gallery-item p {
+      margin: 0;
+      padding: 1em; }
+    @media screen and (min-width: 500px) {
+      .gallery .gallery-item img {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 31.76157%;
+        border-radius: 5px 0 0 0; }
+        .gallery .gallery-item img:last-child {
+          margin-right: 0; }
+      .gallery .gallery-item .item-text {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 65.88078%; }
+        .gallery .gallery-item .item-text:last-child {
+          margin-right: 0; } }
 
 .footer {
   position: relative;
@@ -73,6 +155,7 @@ html {
   background-size: cover; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  font-family: 'Abel', sans-serif; }
 
 /*# sourceMappingURL=main.css.map */

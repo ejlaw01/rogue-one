@@ -1,19 +1,26 @@
 .header {
   position: relative;
   margin: 0;
-  height: 3em;
+  height: 3.5em;
   width: 100%;
   text-align: center;
-  color: $text-color;
-  background: $header-color;
-  @media screen and (min-width: 1000px) {
-    height: 8em;
+  color: white;
+  background: $background-color;
+  &:before{
+    content: '';
+    @include position(absolute, 0 0 0 0);
+    background-image: radial-gradient(black, $background-color);
+    opacity: .5;
   }
   h1 {
+    position: relative;
+    z-index: 1;
     font-size: 1.5em;
     margin: 0 auto;
   }
   h4 {
+    position: relative;
+    z-index: 1;
     margin: 0 auto;
   }
 }

@@ -3,7 +3,8 @@
   width: 100%;
   padding: 1em 0;
   color: $text-color;
-  background-color: $background-color;
+  background: darken($header-color, 15%) center top no-repeat;
+  background-size: cover;
   .faction {
     position: relative;
     min-height: 275px;
@@ -12,40 +13,89 @@
     padding: 1em;
     &:hover > .gallery {
       display: block;
+      background-image: none !important;
     }
     &#rebels {
       background-color: mix($background-color,blue,90%);
+      @include background-image(url("../img/rebel-background.jpg"));
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      &:before {
+        content: '';
+      	@include position(absolute, 0 0 0 0);
+      	background-image: linear-gradient(to bottom right, $background-color, darken($rebel-red, 50%));
+      	opacity: .6;
+      }
+      &:hover {
+        background-image: none;
+      }
     }
     &#imperial {
-      background-color: mix($background-color,red,90%);
+      background-color: $empire-grey;
+      @include background-image(url("../img/imperial-background.jpg"));
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      &:before {
+        content: '';
+      	@include position(absolute, 0 0 0 0);
+      	background-image: linear-gradient(to bottom right,$empire-grey,black);
+      	opacity: .6;
+      }
+      &:hover {
+        // background-image: none;
+      }
     }
   }
 }
 
 .gallery {
-  // display: none;
-  width: 100%;
+  display: none;
+  @include outer-container(800px);
   h2 {
+    position: relative;
     margin: 0;
     margin-bottom: 1em;
     padding: .5em;
     border-top: 1px solid $text-color;
     border-bottom: 1px solid $text-color;
-  }
-  img {
-    width: 90%;
-    border-radius: 5px;
-    border: 2px solid $text-color;
+    z-index: 1;
   }
   .gallery-item {
+    @include outer-container(800px);
     position: relative;
-    margin: 1em auto;
-    padding: .5em;
-    background-color: $header-color;
+    margin: 2em .5em;
+    background-color: darken($header-color, 10%);
     border-radius: 5px;
-    border: 5px solid lighten($background-color, 10%);
+    border: 2px solid $background-color;
+    border-radius: 5px;
     img {
-      margin: 1em 5% 1em 5%;
+      width: 100%;
+      border-radius: 5px 5px 0 0;
+    }
+    .item-text {
+      position: relative;
+      bottom: 0;
+    }
+    h3 {
+      margin: .5em 2em auto 1em;
+      padding: .5em;
+      border-top: 2px solid $rebel-red;
+      border-bottom: 2px solid $rebel-red;
+    }
+    p {
+      margin: 0;
+      padding: 1em;
+    }
+    @media screen and (min-width: 500px) {
+      img {
+        @include span-columns(4);
+        border-radius: (5px 0 0 0);
+      }
+      .item-text {
+        @include span-columns(8);
+      }
     }
   }
 }
