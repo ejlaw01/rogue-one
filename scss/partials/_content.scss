@@ -1,3 +1,9 @@
+.background {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .content {
   @include position(relative, 0 0 null 0);
   width: 100%;
@@ -18,9 +24,7 @@
     &#rebels {
       background-color: mix($background-color,blue,90%);
       @include background-image(url("../img/rebel-background.jpg"));
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
+      @extend .background;
       &:before {
         content: '';
       	@include position(absolute, 0 0 0 0);
@@ -34,9 +38,7 @@
     &#imperial {
       background-color: $empire-grey;
       @include background-image(url("../img/imperial-background.jpg"));
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
+      @extend .background;
       &:before {
         content: '';
       	@include position(absolute, 0 0 0 0);
